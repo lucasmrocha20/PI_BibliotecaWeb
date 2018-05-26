@@ -24,7 +24,7 @@ body{
     width: 130px;
     height: 130px; 
     margin-right: 25px;
-    margin-top: 70px; 
+    margin-top: 70px;  
     border-radius: 50px;
     padding: 1px;
         
@@ -74,24 +74,4 @@ body{
     border-radius: 0 0 10px 10px;
 }
 
-.div_rodape commandButton{
-    width: 150px;
-    height: 35px;
-    background: #fff;
-    line-height: 35px;
-    color: #09d;
-    float: right;
-    margin: 8px;
-    padding: 1px solid #666;
-    border-radius: 8px;
-    font-size: 15px;
-}
 
-.div_rodape commandButton:hover{
-    background: #09d;
-    color:#fff;
-    border: 2px solid orange;
-    font-weight: bold;
-    font-size: 15px;
-    cursor: pointer;
-}
