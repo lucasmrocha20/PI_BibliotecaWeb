@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/templates/modeloFuncionario.xhtml">
+        <ui:define name="Conteudo">
+            <h:form>
+                <p:toolbar>
+                    <f:facet name="left">
+                        <h:outputText value="Funcionários"/>
+                    </f:facet>
+                </p:toolbar>
+
+                <p:dataTable emptyMessage="nenhum registro encontrado."
+                             value="" 
+                             filteredValue="" 
+                             var="funcionarios" rows="10" paginator="true">
+                    
+                    <f:facet name="footer">
+                        <p:commandButton value="Novo" 
+                                         action="/pagesFuncionarios/cadastroFunc.xhtml?faces-redirect=true"/>
+                    </f:facet>
+
+                    <p:column headerText="Nome" sortBy="">
+                        <h:outputText value=""/>
+                    </p:column>
+
+                    <p:column headerText="CPF" sortBy="">
+                        <h:outputText value=""/>
+                    </p:column>
+
+                    <p:column headerText="Opção">
+
+                        <p:button value="Editar" 
+                                         outcome="/pagesFuncionarios/cadastroFunc.xhtml?faces-redirect=true"/>
+                            
+                        <p:button value="Excluir" 
+                                         outcome="/pagesFuncionarios/cadastroFunc.xhtml?faces-redirect=true"/>
+                    </p:column>
+
+                </p:dataTable>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

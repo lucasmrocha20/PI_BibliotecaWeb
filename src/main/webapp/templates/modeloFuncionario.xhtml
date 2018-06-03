@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Biblioteca</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    </h:head>
+    <h:body>
+        <p:layout fullPage="true">
+
+            <p:layoutUnit header="Sistema de biblioteca" position="north" size="50" resizable="true" closable="false" collapsible="false">
+                <h:outputText value="North unit content." />
+            </p:layoutUnit>
+
+            <p:layoutUnit header="Desenvolvido por Lucas M. e Elizabeth C." position="south" size="100" resizable="true" closable="false" collapsible="false">
+            </p:layoutUnit>
+
+            <p:layoutUnit header="Menu Principal" position="west" size="200" resizable="true" closable="false" collapsible="false">
+                <h:form>
+                    <p:panelMenu>
+                        <p:submenu label="Principal">
+                            <p:menuitem value="Principal" outcome="/pagesFuncionarios/TelaFunc.xhtml"/>
+                            <p:menuitem value="Sair" url="index.xhtml"/>
+                        </p:submenu>
+                        <p:submenu label="Cadastros">                           
+                            <p:menuitem value="Clientes" outcome="/pagesFuncionarios/cadastroCli.xhtml"/>
+                            <p:menuitem value="Funcionários" outcome="/pagesFuncionarios/cadastroFunc.xhtml"/>
+                            <p:menuitem value="Exemplares" outcome="/pagesFuncionarios/cadastroEx.xhtml"/>
+                        </p:submenu>                   
+                        <p:submenu label="Pesquisar">
+                            <p:menuitem value="Clientes" outcome="/pagesFuncionarios/pesquisarCliente.xhtml"/>
+                            <p:menuitem value="Funcionários" outcome="/pagesFuncionarios/pesquisarFuncionario.xhtml"/>
+                            <p:menuitem value="Exemplares" outcome="/pagesFuncionarios/pesquisarExemplares.xhtml"/>
+                        </p:submenu>
+                    </p:panelMenu>
+                </h:form>
+            </p:layoutUnit>
+
+            <p:layoutUnit position="center" resizable="true" closable="false" collapsible="false">
+                <ui:insert name="Conteudo"/>
+            </p:layoutUnit>
+
+        </p:layout>
+
+
+    </h:body>
+</html>

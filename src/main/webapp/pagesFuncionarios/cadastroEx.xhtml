@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/templates/modeloFuncionario.xhtml">
+        <ui:define name="Conteudo">
+            <h:form>
+                <p:toolbar>
+                    <f:facet name="left">
+                        <h:outputText value="Exemplar"/>
+                    </f:facet>
+                </p:toolbar>
+
+                <h:panelGrid columns="2">
+                    <p:outputLabel value="Código"/>
+                    <p:inputText size="10" readonly="true"/>
+
+                    <p:outputLabel value="Autor:"/>
+                    <p:inputText size="30"/>
+
+                    <p:outputLabel value="Título:"/>
+                    <p:inputText size="30"/>
+
+                    <p:outputLabel value="Qtd. Exemplares:"/>
+                    <p:inputMask mask="99"/>
+
+                </h:panelGrid>
+
+                <h:panelGrid columns="7">
+                
+                    <p:commandButton value="Novo" action="/pagesFuncionarios/cadastroEx.xhtml?faces-redirect=true"/>
+                    
+                    <p:commandButton value="Salvar" action="#{livroController.adicionarLivroAction()}"/>
+                    
+                    <p:commandButton value="Editar" action="#{livroController.alterarLivroAction()}"/>
+                    
+                    <p:commandButton value="Excluir" action="#{livroController.excluirLivroAction()}"/>
+                    
+                    <p:commandButton value="Voltar" action="/pagesFuncionarios/pesquisarExemplares.xhtml?faces-redirect=true"/>
+                    
+                    <p:commandButton value="Reservado" action="/pagesFuncionarios/pesquisarExemplares.xhtml?faces-redirect=true"/>
+                    
+                    <p:commandButton value="Devolvido" action="/pagesFuncionarios/pesquisarExemplares.xhtml?faces-redirect=true"/>
+               
+                </h:panelGrid>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+
+</html>

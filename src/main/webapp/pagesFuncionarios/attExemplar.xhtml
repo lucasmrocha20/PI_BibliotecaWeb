@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/templates/modeloFuncionario.xhtml"> 
+        <ui:define name="Conteudo">
+            <p:fieldset legend="Atualizar Exemplares">
+
+                <p:panelGrid columns="2">
+                    <h:outputLabel value="Código"></h:outputLabel>
+                    <p:inputMask mask="999999" value="#{Livro.codLivro}"></p:inputMask>
+
+                    <h:outputLabel value="Título do exemplar"></h:outputLabel>
+                    <p:inputText value="#{Livro.titulo}"></p:inputText>
+
+                </p:panelGrid>
+
+                <p:toolbar>
+                    <p:toolbarGroup align="left">
+                        <p:commandButton value="Buscar" action="#{livroController.recuperarTodos()}"></p:commandButton>
+                        <p:commandButton value="Voltar" action="TelaFunc.xhtml"></p:commandButton>
+                    </p:toolbarGroup>
+
+                </p:toolbar>
+
+            </p:fieldset>
+        </ui:define>
+    </ui:composition>
+</html>
