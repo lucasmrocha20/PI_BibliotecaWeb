@@ -6,29 +6,45 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
-    <ui:composition template="/templates/modeloCliente.xhtml">
+    <ui:composition template="/templates/modeloFuncionario.xhtml">
         <ui:define name="Conteudo">
             <h:form>
-                <f:facet name="left">
-                    <h:outputText value="Atualizar cadastro"/>
-                </f:facet>
+                <p:toolbar>
+                    <f:facet name="left">
+                        <h:outputText value="Cliente"/>
+                    </f:facet>
+                </p:toolbar>
 
                 <h:panelGrid columns="2">
+                    <p:outputLabel value="Código"/>
+                    <p:inputText size="10" readonly="true"/>
 
-                    <h:outputLabel value="CPF"></h:outputLabel>
-                    <p:inputText value="#{Pessoa.CPF}"></p:inputText>
+                    <p:outputLabel value="E-mail:"/>
+                    <p:inputText size="30"/>
+
+                    <p:outputLabel value="Telefone:"/>
+                    <p:inputMask mask="(99) 99999-9999"/>
+
+                    <p:outputLabel value="Cidade:"/>
+                    <p:inputText  size="30"/>
+
+                    <p:outputLabel value="Logradouro:"/>
+                    <p:inputText  size="30"/>
+
+                    <p:outputLabel value="Número:"/>
+                    <p:inputMask mask="9999" size="10"/>
 
                 </h:panelGrid>
-                <p:toolbarGroup align="left">
-                    <p:commandButton value="Buscar" action="#{pessoaController.recuperarTodos()}"></p:commandButton>
-                    <p:commandButton value="Voltar" action="TelaCli.xhtml"></p:commandButton>
-                </p:toolbarGroup>  
 
-
+                <h:panelGrid columns="2">
+                    <p:button value="Alterar" outcome="/pagesClientes/attCadastro.xhtml"/>
+                                        
+                    <p:button value="Voltar" outcome="/pagesClientes/pesqCliente.xhtml"/>
+                </h:panelGrid>
 
             </h:form>
         </ui:define>
-    </ui:composition>  
+    </ui:composition>
+
 
 </html>
-

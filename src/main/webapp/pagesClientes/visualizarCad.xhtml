@@ -5,40 +5,12 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
     <ui:composition template="/templates/modeloCliente.xhtml">
         <ui:define name="Conteudo">
             
-            <h:form>
             
-                    <f:facet name="left">
-                        <h:outputText value="Visualizar cadastro"/>
-                    </f:facet>
             
-                <h:panelGrid columns="2">
-
-                    <h:outputLabel value="CPF"></h:outputLabel>
-                    <p:inputText value="#{Pessoa.CPF}"></p:inputText>
-
-                </h:panelGrid>
-                <p:toolbarGroup align="left">
-                    <p:commandButton value="Buscar" action="#{pessoaController.pessoas}"></p:commandButton>
-                    <p:commandButton value="Voltar" action="/pagesClientes/TelaCli.xhtml"></p:commandButton>
-                </p:toolbarGroup>  
-
-
-                <p:dataTable emptyMessage="nenhum registro encontrado">
-                    <p:column headerText="Código"></p:column>
-                    <p:column headerText="Nome"></p:column>
-                    <p:column headerText="CPF"></p:column>
-                    <p:column headerText="E-mail"></p:column>
-                    <p:column headerText="Telefone"></p:column>
-                    <p:column headerText="Cidade"></p:column>
-                    <p:column headerText="Logradouro"></p:column>
-                    <p:column headerText="Número"></p:column>
-                </p:dataTable>
-
-            </h:form>
-
         </ui:define>
     </ui:composition>
 

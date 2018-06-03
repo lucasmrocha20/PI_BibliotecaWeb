@@ -6,24 +6,19 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui">
 
-    <ui:composition template="/templates/modeloFuncionario.xhtml">
+    <ui:composition template="/templates/modeloCliente.xhtml">
         <ui:define name="Conteudo">
             <h:form>
                 <p:toolbar>
                     <f:facet name="left">
-                        <h:outputText value="Funcionários"/>
+                        <h:outputText value="Clientes"/>
                     </f:facet>
                 </p:toolbar>
 
                 <p:dataTable emptyMessage="nenhum registro encontrado."
                              value="" 
                              filteredValue="" 
-                             var="funcionarios" rows="10" paginator="true">
-                    
-                    <f:facet name="footer">
-                        <p:commandButton value="Novo" 
-                                         action="/pagesFuncionarios/cadastroFunc.xhtml?faces-redirect=true"/>
-                    </f:facet>
+                             var="Cliente" rows="10" paginator="true">
 
                     <p:column headerText="Nome" sortBy="">
                         <h:outputText value=""/>
@@ -35,11 +30,10 @@
 
                     <p:column headerText="Opção">
 
-                        <p:button value="Editar" 
-                                         outcome="/pagesFuncionarios/cadastroFunc.xhtml"/>
-                            
-                        <p:button value="Excluir" 
-                                         outcome="/pagesFuncionarios/cadastroFunc.xhtml"/>
+                        <p:button value="Atualizar" 
+                                  outcome="/pagesClientes/attCadastro.xhtml"/>
+                        <p:button value="Vizualizar"
+                                  outcome="/pagesClientes/visualizarCad.xhtml"/>
                     </p:column>
 
                 </p:dataTable>
