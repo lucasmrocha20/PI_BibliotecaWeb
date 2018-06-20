@@ -33,14 +33,14 @@ public class EmprestimoController {
         if (!selecionarLivro.isEmprestado()) {
             this.cadastroEmprestimo.setLivro(selecionarLivro);
             this.cadastroEmprestimo.setPessoa(selecionarPessoa);
-            this.cadastroEmprestimo.setDataEmprestimo("22/04/2018");
+            this.cadastroEmprestimo.setDataEmprestimo("");
             this.emprestimoModel.inserirEmprestimo(this.cadastroEmprestimo);
 
             selecionarLivro.setEmprestado(true);
             this.livroModel.atualizarLivro(selecionarLivro);
 
             this.cadastroEmprestimo = new Emprestimo();
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Emprestimo cadastrado com sucesso!"));
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Empréstimo cadastrado com sucesso!"));
         } else {
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Livro já emprestado"));
         }
@@ -56,7 +56,7 @@ public class EmprestimoController {
         this.livroModel.atualizarLivro(selecionarLivro);
 
         this.cadastroEmprestimo = new Emprestimo();
-        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Emprestimo devolvido com sucesso!"));
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Empréstimo devolvido com sucesso!"));
     }
 
     public Emprestimo getSelecionarEmprestimo() {

@@ -17,30 +17,30 @@
 
                 <h:panelGrid columns="2">
                     <p:outputLabel value="Código"/>
-                    <p:inputText size="10" readonly="true"/>
+                    <p:inputText size="10" readonly="true" value="#{livroController.cadastroLivro.codLivro}"/>
 
                     <p:outputLabel value="Autor:"/>
-                    <p:inputText size="30"/>
+                    <p:inputText size="30" value="#{livroController.cadastroLivro.autor}"/>
 
                     <p:outputLabel value="Título:"/>
-                    <p:inputText size="30"/>
+                    <p:inputText size="30" value="#{livroController.cadastroLivro.titulo}"/>
 
                     <p:outputLabel value="Qtd. Exemplares:"/>
-                    <p:inputMask mask="99"/>
+                    <p:inputMask mask="99" value="#{livroController.cadastroLivro.quantLivros}"/>
 
                 </h:panelGrid>
 
                 <h:panelGrid columns="7">
                 
-                    <p:commandButton value="Novo" action="/pagesFuncionarios/cadastroEx.xhtml?faces-redirect=true"/>
+                    <p:commandButton icon="ui-icon-refresh" action="/pagesFuncionarios/cadastroEx.xhtml?faces-redirect=true"/>
                     
-                    <p:commandButton value="Salvar" action="#{livroController.adicionarLivroAction()}"/>
+                    <p:commandButton icon="ui-icon-circle-plus" action="#{livroController.adicionarLivroAction()}"/>
                     
-                    <p:commandButton value="Editar" action="#{livroController.alterarLivroAction()}"/>
+                    <p:commandButton icon="ui-icon-pencil" action="#{livroController.alterarLivroAction()}"/>
                     
-                    <p:commandButton value="Excluir" action="#{livroController.excluirLivroAction()}"/>
+                    <p:commandButton icon="ui-icon-trash" action="#{livroController.excluirLivroAction()}"/>
                     
-                    <p:commandButton value="Voltar" action="/pagesFuncionarios/pesquisarExemplares.xhtml?faces-redirect=true"/>
+                    <p:commandButton icon="ui-icon-arrowreturnthick-1-w" action="/pagesFuncionarios/pesquisarExemplares.xhtml?faces-redirect=true"/>
                     
                     <p:commandButton value="Reservado" action="/pagesFuncionarios/pesquisarExemplares.xhtml?faces-redirect=true"/>
                     

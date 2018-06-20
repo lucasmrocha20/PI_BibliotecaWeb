@@ -26,7 +26,7 @@ public class PessoaController {
         this.cadastroPessoa = new Pessoa();
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Pessoa cadastrada com sucesso!"));
         
-        return "/tudopessoa.xhtml?faces-redirect=true";
+        return "/pagesClientes/visualizarCad.xhtml";
     }
 
     public void alterarPessoaAction() {

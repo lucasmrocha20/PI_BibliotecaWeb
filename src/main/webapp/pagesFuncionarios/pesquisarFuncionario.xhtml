@@ -21,7 +21,7 @@
                              var="funcionarios" rows="10" paginator="true">
                     
                     <f:facet name="footer">
-                        <p:commandButton value="Novo" 
+                        <p:commandButton icon=" ui-icon-plusthick "  
                                          action="/pagesFuncionarios/cadastroFunc.xhtml?faces-redirect=true"/>
                     </f:facet>
 
@@ -35,10 +35,10 @@
 
                     <p:column headerText="Opção">
 
-                        <p:button value="Editar" 
+                        <p:button icon="ui-icon-pencil"
                                          outcome="/pagesFuncionarios/cadastroFunc.xhtml"/>
                             
-                        <p:button value="Excluir" 
+                        <p:button icon="ui-icon-trash"
                                          outcome="/pagesFuncionarios/cadastroFunc.xhtml"/>
                     </p:column>
 

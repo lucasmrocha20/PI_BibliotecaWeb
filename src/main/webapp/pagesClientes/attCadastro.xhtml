@@ -6,7 +6,7 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
-    <ui:composition template="/templates/modeloFuncionario.xhtml">
+    <ui:composition template="/templates/modeloCliente.xhtml">
         <ui:define name="Conteudo">
             <h:form>
                 <p:toolbar>
@@ -39,7 +39,7 @@
                 <h:panelGrid columns="2">
                     <p:button value="Alterar" outcome="/pagesClientes/attCadastro.xhtml"/>
                                         
-                    <p:button value="Voltar" outcome="/pagesClientes/pesqCliente.xhtml"/>
+                    <p:button icon="ui-icon-arrowreturnthick-1-w" outcome="/pagesClientes/pesqCliente.xhtml"/>
                 </h:panelGrid>
 
             </h:form>

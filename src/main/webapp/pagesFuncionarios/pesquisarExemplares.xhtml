@@ -16,12 +16,12 @@
                 </p:toolbar>
 
                 <p:dataTable emptyMessage="nenhum registro encontrado."
-                             value="" 
-                             filteredValue="" 
-                             var="Exemplares" rows="10" paginator="true">
+                             value="#{livroController.recuperarTodos()}"
+                             var="Exemplares" 
+                             rows="10" paginator="true">
                     
                     <f:facet name="footer">
-                        <p:commandButton value="Novo" 
+                        <p:commandButton icon=" ui-icon-plusthick " 
                                          action="/pagesFuncionarios/cadastroEx.xhtml?faces-redirect=true"/>
                     </f:facet>
 
@@ -34,10 +34,10 @@
                     </p:column>
 
                     <p:column headerText="Opção">
-                        <p:button value="Editar" 
+                        <p:button icon="ui-icon-pencil" 
                                          outcome="/pagesFuncionarios/cadastroEx.xhtml"/>
  
-                        <p:button value="Excluir" 
+                        <p:button icon="ui-icon-trash" 
                                          outcome="/pagesFuncionarios/cadastroEx.xhtml"/>
                         
                         <p:button value="Situação" 

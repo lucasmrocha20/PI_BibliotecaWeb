@@ -6,42 +6,67 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui">
 
+
     <ui:composition template="/templates/modeloFuncionario.xhtml">
         <ui:define name="Conteudo">
             <h:form>
+                <p:growl id="gro" life="4000"/>
                 <p:toolbar>
                     <f:facet name="left">
                         <h:outputText value="Clientes"/>
                     </f:facet>
                 </p:toolbar>
 
-                <p:dataTable emptyMessage="nenhum registro encontrado."
-                             value="" 
-                             filteredValue="" 
-                             var="funcionarios" rows="10" paginator="true">
+                <p:dialog id="dialPesquisarCliente" visible="false" modal="true" 
+                          header="Pesquisa de Cliente Cadastrado"
+                          resizable="false" widgetVar="idDialPesquisarCliente">
 
-                    <f:facet name="footer">
-                        <p:commandButton value="Novo" 
-                                         action="/pagesFuncionarios/cadastroCli.xhtml?faces-redirect=true"/>
-                    </f:facet>
+                    <p:dataTable emptyMessage="nenhum registro encontrado." 
+                                 value="#{pessoaController.recuperarTodos()}"
+                                 var="clientes" rowKey="#{clientes.codPessoa}" 
+                                 rows="10" 
+                                 paginator="true"
+                                 selectionMode="single">
 
-                    <p:column headerText="Nome" sortBy="">
-                        <h:outputText value=""/>
-                    </p:column>
+                        <f:facet name="footer">
+                            <p:commandButton icon=" ui-icon-plusthick " 
+                                             action="/pagesFuncionarios/cadastroCli.xhtml?faces-redirect=true"/>
+                        </f:facet>
 
-                    <p:column headerText="CPF" sortBy="">
-                        <h:outputText value=""/>
-                    </p:column>
+                        <p:column headerText="Código" filterBy="#{clientes.codPessoa}">
+                        </p:column>
 
-                    <p:column headerText="Opção">
+                        <p:column headerText="Nome" filterBy="#{clientes.nome}">
+                        </p:column>
 
-                        <p:button value="Editar" 
-                                  outcome="/pagesFuncionarios/cadastroCli.xhtml"/>
-                        <p:button value="Excluir" 
-                                  outcome="/pagesFuncionarios/cadastroCli.xhtml"/>
-                    </p:column>
+                        <p:column headerText="CPF" filterBy="#{clientes.CPF}">
+                        </p:column>
 
-                </p:dataTable>
+                        <p:column headerText="E-mail" filterBy="#{clientes.email}">
+                        </p:column>
+
+                        <p:column headerText="Telefone" filterBy="#{clientes.telefone}">
+                        </p:column>
+
+                        <p:column headerText="Cidade" filterBy="#{clientes.cidade}">
+                        </p:column>
+
+                        <p:column headerText="Logradouro" filterBy="#{clientes.logradouro}">
+                        </p:column>
+
+                        <p:column headerText="Número" filterBy="#{clientes.numero}">
+                        </p:column>
+
+                        <p:column headerText="Opção">
+
+                            <p:button icon="ui-icon-pencil" 
+                                      outcome="/pagesFuncionarios/cadastroCli.xhtml"/>
+                            <p:button icon="ui-icon-trash" 
+                                      outcome="/pagesFuncionarios/cadastroCli.xhtml"/>
+                        </p:column>
+
+                    </p:dataTable>
+                </p:dialog>
             </h:form>
         </ui:define>
     </ui:composition>
